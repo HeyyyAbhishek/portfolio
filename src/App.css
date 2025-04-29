@@ -1,0 +1,38 @@
+a.active{
+  color:white !important;
+  font-weight: 500;
+}
+
+.quote{
+  position: relative;
+}
+.quote::before{
+  content: url("./assets/QuoteUp.svg");
+  position: absolute;
+  top: -14px;
+  left: 18px;
+}
+
+.quote::after{
+  content: url("./assets/QuoteDown.svg");
+  position: absolute;
+  bottom: -14px;
+  right: 18px;
+  transform: rotate(180deg);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}

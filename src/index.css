@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  font-family: 'Fira Code', monospace;
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+  text-decoration: none;
+}
+
+:root {
+  /* Define CSS variables for tech colors to use in motion animations */
+  --color-accent: #C778DD;
+  --color-accent-light: #D89EE6;
+  --color-accent-dark: #A155B9;
+  --color-success: #8CEA95;
+  --color-warning: #F1CA7E;
+  --color-error: #FF6B6B;
+  --color-info: #61AFEF;
+}
+
+html {
+  font-size: 15px;
+}
+
+@media (min-width: 640px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  background-color: #282C33;
+  color: white;
+  overflow-x: hidden;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+}
+
+.quote-container {
+  position: relative;
+}
+
+.quote::before {
+  content: url("./assets/QuoteUp.svg");
+  position: absolute;
+  top: -14px;
+  left: 18px;
+  transform: scale(0.8);
+}
+
+@media (min-width: 640px) {
+  .quote::before {
+    transform: scale(1);
+  }
+}
+
+.quote::after {
+  content: url("./assets/QuoteDown.svg");
+  position: absolute;
+  bottom: -14px;
+  right: 18px;
+  transform: rotate(180deg) scale(0.8);
+}
+
+@media (min-width: 640px) {
+  .quote::after {
+    transform: rotate(180deg) scale(1);
+  }
+}
+
+/* Add touch-friendly styles */
+@media (max-width: 768px) {
+  input, button, select, textarea, a {
+    min-height: 44px;
+  }
+  
+  a.inline-block {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
